@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import { useEffect, useState } from "react";
 import axios from "axios";
-asdfsdfsdfa;
 export default function CountryPage(params) {
   const router = useRouter();
   const id = router.query.id;
