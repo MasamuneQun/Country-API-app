@@ -1,12 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 export default function Country(props) {
   const router = useRouter();
   const data = props.country;
   const [lang, setLang] = useState("");
   const [curr, setCurr] = useState("");
-
   useEffect(() => {
     let languages = "";
     for (let key in data.languages) {
@@ -43,9 +43,13 @@ export default function Country(props) {
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-x-36 px-24">
         <>
           <div className="lg:flex items-center">
-            <img
+            <Image
+              unoptimized={true}
               className=" drop-shadow-xl border border-GreyBackground"
               src={data.flags.svg}
+              height={300}
+              width={500}
+              alt=""
             />
           </div>
           <div className="flex flex-col py-8 items-center lg:items-start">

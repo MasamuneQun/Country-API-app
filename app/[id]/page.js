@@ -6,7 +6,7 @@ async function getCountries() {
 }
 
 async function getCountry(id) {
-  const res = await fetch(`https://restcountries.com/v3.1/name/${id}`)
+  const res = await fetch(`https://restcountries.com/v3/name/${id}`)
   const data = await res.json()
   return data[0]
 }

@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-export default function CountryItem(props) {
+import { forwardRef } from "react";
+const CountryItem = forwardRef((props, ref) => {
   const Item = {
     initial: {
       opacity: 0,
@@ -30,6 +31,7 @@ export default function CountryItem(props) {
 
   return (
     <motion.div
+      ref={ref}
       variants={Item}
       initial="initial"
       animate="animate"
@@ -70,4 +72,6 @@ export default function CountryItem(props) {
       </Link>
     </motion.div>
   );
-}
+});
+
+export default CountryItem;
