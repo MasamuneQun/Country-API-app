@@ -1,6 +1,7 @@
+"use client";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import CountryItem from "../components/CountryItem";
+import CountryItem from "./CountryItem";
 import { AnimatePresence } from "framer-motion";
 
 const Items = ({ currentItems, animate }) => {
@@ -23,7 +24,7 @@ const Items = ({ currentItems, animate }) => {
   );
 };
 
-export default function renderedCountries({ itemsPerPage, items }) {
+export default function RenderedCountries({ itemsPerPage, items }) {
   useEffect(() => {
     setPage(0);
     const newOffset = 0;

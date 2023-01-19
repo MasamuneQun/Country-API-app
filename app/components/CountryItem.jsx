@@ -1,9 +1,7 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { isAbsolute, relative } from "path";
-import { useState } from "react";
-import { forwardRef } from "react";
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
-const CountryItem = forwardRef((props, ref) => {
+export default function CountryItem(props) {
   const Item = {
     initial: {
       opacity: 0,
@@ -32,7 +30,6 @@ const CountryItem = forwardRef((props, ref) => {
 
   return (
     <motion.div
-      ref={ref}
       variants={Item}
       initial="initial"
       animate="animate"
@@ -73,6 +70,4 @@ const CountryItem = forwardRef((props, ref) => {
       </Link>
     </motion.div>
   );
-});
-
-export default CountryItem;
+}
