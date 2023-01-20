@@ -1,4 +1,4 @@
-import Countries from "./Countries";
+import Countries from "./countries";
 async function getCountries() {
   const res = await fetch("https://restcountries.com/v3/all?fields=name,capital,region,population,flags")
   const data = await res.json()
