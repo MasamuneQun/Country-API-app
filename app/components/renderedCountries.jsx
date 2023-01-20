@@ -28,7 +28,7 @@ export default function RenderedCountries({ itemsPerPage, items }) {
   useEffect(() => {
     setPage(0);
     const newOffset = 0;
-    console.log(`User requested page number 0, which is offset ${newOffset}`);
+
     setItemOffset(newOffset);
   }, [items]);
   const [itemOffset, setItemOffset] = useState(0);
@@ -48,10 +48,7 @@ export default function RenderedCountries({ itemsPerPage, items }) {
       setPage(event.selected);
     }
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    console.log(event);
+
     setItemOffset(newOffset);
   };
 

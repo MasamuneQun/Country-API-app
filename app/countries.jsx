@@ -23,7 +23,7 @@ export default function Countries(props) {
     } else {
       newData = allCountries;
     }
-    console.log(newData);
+
     if (filter != null) {
       let filterData = [];
       newData.map((elem) => {
