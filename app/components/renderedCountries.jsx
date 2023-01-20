@@ -54,7 +54,7 @@ export default function RenderedCountries({ itemsPerPage, items }) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-6 items-center lg:grid lg:gap-y-12 lg:grid-cols-4   mt-0 pb-2 relative overflow-x-hidden">
+      <div className="flex flex-col gap-y-6 items-center lg:grid lg:gap-y-12 lg:grid-cols-4   mt-0 pb-2 relative overflow-hidden">
         <Items currentItems={currentItems} animate={animate} />
       </div>
 
