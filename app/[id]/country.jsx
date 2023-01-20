@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { use } from "react";
-import Image from "next/image";
 
 async function getLanguages(data) {
   let languages = "";
@@ -45,10 +44,11 @@ export default function Country(props) {
       {/* Main content */}
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-x-36 px-24">
         <>
-          <div className="lg:flex items-center">
+          <div className="lg:flex items-center lg:justify-center">
             <img
               className=" drop-shadow-xl border border-GreyBackground"
               src={data.flags.svg}
+              alt="Flag"
             />
           </div>
           <div className="flex flex-col py-8 items-center lg:items-start">
@@ -70,7 +70,7 @@ export default function Country(props) {
                 <span className="font-normal">{data.subregion}</span>
               </div>
               <div className="text-lg font-semibold">
-                Capital: <span className="font-normal">{data.capital[0]}</span>
+                Capital: <span className="font-normal">{data.capital}</span>
               </div>
               <div className="text-lg font-semibold">
                 Languages: <span className="font-normal">{lang}</span>
