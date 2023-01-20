@@ -1,35 +1,29 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
 import { use } from "react";
 import Image from "next/image";
 
-async function getCountry(id) {
-  const res = await fetch(`https://restcountries.com/v3.1/name/${id}`);
-  return await res.json();
+async function getLanguages(data) {
+  let languages = "";
+  for (let key in data.languages) {
+    languages += data.languages[key];
+    languages += " ";
+  }
+  return languages;
+}
+async function getCurrencies(data) {
+  let currencies = "";
+  for (let key in data.currencies) {
+    currencies += data.currencies[key].name;
+    currencies += " ";
+  }
+  return currencies;
 }
 export default function Country(props) {
   const router = useRouter();
-  const id = props.country;
-  const country = use(getCountry(id));
-  const data = country[0];
-  console.log(data);
-  // const [lang, setLang] = useState("");
-  // const [curr, setCurr] = useState("");
-  // useEffect(() => {
-  //   let languages = "";
-  //   for (let key in data.languages) {
-  //     languages += data.languages[key];
-  //     languages += " ";
-  //   }
-  //   let currencies = "";
-  //   for (let key in data.currencies) {
-  //     currencies += data.currencies[key].name;
-  //     currencies += " ";
-  //   }
-  //   setCurr(currencies);
-  //   setLang(languages);
-  // }, []);
+  const data = props.country;
+  const lang = use(getLanguages(data));
+  const curr = use(getCurrencies(data));
   return (
     <>
       <div className="flex flex-col gap-y-4 items-center lg:flex-row justify-between py-12 px-24 select-none">
@@ -79,10 +73,10 @@ export default function Country(props) {
                 Capital: <span className="font-normal">{data.capital[0]}</span>
               </div>
               <div className="text-lg font-semibold">
-                Languages: <span className="font-normal">{}</span>
+                Languages: <span className="font-normal">{lang}</span>
               </div>
               <div className="text-lg font-semibold">
-                Currencies: <span className="font-normal">{}</span>
+                Currencies: <span className="font-normal">{curr}</span>
               </div>
             </div>
           </div>
