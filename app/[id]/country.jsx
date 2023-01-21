@@ -43,7 +43,7 @@ export default function Country(props) {
 				<>
 					<div className="lg:flex items-center lg:justify-center">
 						<img
-							className=" drop-shadow-xl border border-GreyBackground dark:border-gray-900 duration-300"
+							className=" drop-shadow-xl border border-GreyBackground dark:border-gray-900 duration-300 max-h-[300px] max-w-[500px]"
 							src={data.flags.svg}
 							alt="Flag"
 						/>

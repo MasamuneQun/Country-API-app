@@ -36,30 +36,32 @@ const CountryItem = forwardRef((props, ref) => {
 			initial="initial"
 			animate="animate"
 			exit="exit"
-			className="w-[280px] h-[300px] rounded-lg bg-White drop-shadow-md justify-self-center truncate select-none CountryItem"
+			className="w-[280px] h-[300px] rounded-lg   dark:text-gray-200 drop-shadow-md justify-self-center truncate select-none CountryItem"
 		>
-			<Link href={props.country}>
-				<img src={props.flag} alt="flags" className="w-[280px] h-[150px] rounded-t-lg" />
-				<div className="py-6 px-4">
-					<div className="font-bold text-xl">{props.country}</div>
-					<div className="pt-4">
-						<div>
-							<div className="text-semibold text-sm">
-								Population:
-								<span className="text-sm text-LightInput pl-1">{props.population}</span>
-							</div>
-							<div className="text-semibold text-sm">
-								Region:
-								<span className="text-sm text-LightInput pl-1">{props.region}</span>
-							</div>
-							<div className="text-semibold text-sm">
-								Capital:
-								<span className="text-sm text-LightInput pl-1">{props.capital}</span>
+			<div className="bg-White dark:bg-gray-700 duration-300">
+				<Link href={props.country}>
+					<img src={props.flag} alt="flags" className="w-[280px] h-[150px] rounded-t-lg" />
+					<div className="py-6 px-4">
+						<div className="font-bold text-xl ">{props.country}</div>
+						<div className="pt-4">
+							<div>
+								<div className="text-semibold text-sm">
+									Population:
+									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.population}</span>
+								</div>
+								<div className="text-semibold text-sm">
+									Region:
+									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.region}</span>
+								</div>
+								<div className="text-semibold text-sm">
+									Capital:
+									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.capital}</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</Link>
+				</Link>
+			</div>
 		</motion.div>
 	)
 })
