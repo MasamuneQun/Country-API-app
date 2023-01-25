@@ -11,7 +11,7 @@ const Items = ({ currentItems, animate }) => {
 				return (
 					<CountryItem
 						key={elem.name.official}
-						flag={elem.flags.svg}
+						flag={elem.flags.png}
 						custom={animate}
 						country={elem.name.official}
 						population={elem.population}
@@ -67,13 +67,13 @@ export default function RenderedCountries({ itemsPerPage, items }) {
 				nextLabel={
 					<img
 						src="chevron-forward-outline.svg"
-						className="h-[40px] rotate-0 bg-White drop-shadow-lg rounded-full p-2 transition duration-200 hover:bg-GreyBackground hover:drop-shadow-lg"
+						className="h-[40px] rotate-0 bg-White drop-shadow-lg rounded-full p-2 transition duration-200 hover:bg-GreyBackground hover:drop-shadow-lg dark:bg-slate-400 dark:hover:bg-slate-300"
 					/>
 				}
 				previousLabel={
 					<img
 						src="chevron-back-outline.svg"
-						className="h-[40px] bg-White drop-shadow-lg rounded-full p-2 transition duration-200 hover:bg-GreyBackground hover:drop-shadow-lg"
+						className="h-[40px] bg-White drop-shadow-lg rounded-full p-2 transition duration-200 hover:bg-GreyBackground hover:drop-shadow-lg dark:bg-slate-400 dark:hover:bg-slate-300"
 					/>
 				}
 				onPageChange={handlePageClick}

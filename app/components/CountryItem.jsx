@@ -36,26 +36,26 @@ const CountryItem = forwardRef((props, ref) => {
 			initial="initial"
 			animate="animate"
 			exit="exit"
-			className="w-[280px] h-[300px] rounded-lg   dark:text-gray-200 drop-shadow-md justify-self-center truncate select-none CountryItem"
+			className="w-[270px] h-[300px] rounded-lg   dark:text-gray-200 drop-shadow-md justify-self-center  select-none CountryItem "
 		>
-			<div className="bg-White dark:bg-gray-700 duration-300">
+			<div className="bg-White dark:bg-slate-700 duration-300 rounded-lg">
 				<Link href={props.country}>
-					<img src={props.flag} alt="flags" className="w-[280px] h-[150px] rounded-t-lg" />
+					<img src={props.flag} alt="flags" className="w-[270px] h-[150px] rounded-md" />
 					<div className="py-6 px-4">
-						<div className="font-bold text-xl ">{props.country}</div>
+						<div className="font-extrabold text-xl truncate ">{props.country}</div>
 						<div className="pt-4">
 							<div>
-								<div className="text-semibold text-sm">
+								<div className=" font-semibold text-sm">
 									Population:
-									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.population}</span>
+									<span className="text-sm font-light  pl-1 dark:text-gray-400">{props.population}</span>
 								</div>
-								<div className="text-semibold text-sm">
+								<div className="font-semibold text-sm">
 									Region:
-									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.region}</span>
+									<span className="text-sm font-light  pl-1 dark:text-gray-400">{props.region}</span>
 								</div>
-								<div className="text-semibold text-sm">
+								<div className="font-semibold text-sm">
 									Capital:
-									<span className="text-sm text-LightInput pl-1 dark:text-gray-400">{props.capital}</span>
+									<span className="text-sm font-light  pl-1 dark:text-gray-400">{props.capital}</span>
 								</div>
 							</div>
 						</div>

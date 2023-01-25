@@ -62,8 +62,8 @@ export default function Countries(props) {
 			const id = sessionStorage.getItem("dropItem")
 			const item = document.getElementById(id)
 			if (item != null) {
-				item.classList.remove("bg-GreyBackground")
-				item.classList.add("bg-White")
+				item.classList.remove("bg-GreyBackground", "dark:bg-slate-500")
+				item.classList.add("bg-White", "dark:bg-slate-600")
 			}
 			sessionStorage.setItem("dropItem", "")
 		} else {
@@ -72,11 +72,11 @@ export default function Countries(props) {
 			const id = sessionStorage.getItem("dropItem")
 			const item = document.getElementById(id)
 			if (item != null) {
-				item.classList.remove("bg-GreyBackground")
-				item.classList.add("bg-White")
+				item.classList.remove("bg-GreyBackground", "dark:bg-slate-500")
+				item.classList.add("bg-White", "dark:bg-slate-600")
 			}
-			e.target.classList.remove("bg-White")
-			e.target.classList.add("bg-GreyBackground")
+			e.target.classList.remove("bg-White", "dark:bg-slate-600")
+			e.target.classList.add("bg-GreyBackground", "dark:bg-slate-500")
 			sessionStorage.setItem("dropItem", e.target.id)
 		}
 	}
@@ -123,7 +123,7 @@ export default function Countries(props) {
 				{/* Search button */}
 				<div
 					onClick={divFocus}
-					className="bg-White px-8 py-4 drop-shadow-md rounded-md max-w-[300px] lg:min-w-[600px] flex text-LightInput cursor-text"
+					className="bg-White dark:bg-slate-600 duration-300 px-8 py-4 drop-shadow-md rounded-md max-w-[300px] lg:min-w-[600px] flex text-LightInput dark:text-White cursor-text"
 				>
 					<img
 						id="lens"
@@ -141,22 +141,27 @@ export default function Countries(props) {
 						}}
 						id="input"
 						type="text"
-						className="bg-White block outline-0 w-full transition-all duration-300 pl-12 cursor-text"
+						className="bg-White dark:bg-slate-600 block outline-0 w-full duration-300 pl-12 cursor-text text-LightInput dark:text-White"
 						placeholder="Search for a country..."
 					/>
 				</div>
 				{/* Filter */}
 				<div onMouseEnter={OpenMenu} onMouseLeave={CloseMenu}>
-					<div className="bg-White py-4 pl-6 pr-4 drop-shadow-md rounded-md text-sm flex w-[200px] justify-between hover:bg-LightBackground hover:drop-shadow">
+					<div className="bg-White dark:bg-slate-600 dark:hover:bg-slate-500 duration-300 dark:text-White py-4 pl-6 pr-4 drop-shadow-md rounded-md text-base flex w-[200px] justify-between hover:bg-LightBackground hover:drop-shadow">
 						<button className="">Filter by Region</button>
-						<img src="chevron-forward-outline.svg" id="img" alt="" className="max-h-4 pt-1 transition duration-200" />
+						<img
+							src="chevron-forward-outline.svg"
+							id="img"
+							alt=""
+							className="max-h-4 mt-[5px] transition duration-200"
+						/>
 					</div>
 					<div className="absolute opacity-0 z-[-10] pt-1 drop-shadow-md" id="menu">
-						<DropItem isChosen={filter} name="Africa" value="Africa" filter={Filter} />
-						<DropItem isChosen={filter} name="America" value="Americas" filter={Filter} />
-						<DropItem isChosen={filter} name="Asia" value="Asia" filter={Filter} />
-						<DropItem isChosen={filter} name="Europe" value="Europe" filter={Filter} />
-						<DropItem isChosen={filter} name="Oceania" value="Oceania" filter={Filter} />
+						<DropItem name="Africa" value="Africa" filter={Filter} />
+						<DropItem name="America" value="Americas" filter={Filter} />
+						<DropItem name="Asia" value="Asia" filter={Filter} />
+						<DropItem name="Europe" value="Europe" filter={Filter} />
+						<DropItem name="Oceania" value="Oceania" filter={Filter} />
 					</div>
 				</div>
 			</div>
